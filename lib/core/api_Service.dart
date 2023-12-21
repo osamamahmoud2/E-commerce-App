@@ -22,9 +22,7 @@ class ApiService {
   getReuest({required String endPoint}) async {
     http.Response response = await http.get(
         Uri.parse("https://student.valuxapps.com/api/$endPoint"),
-        headers: {
-          'lang': 'en',
-        });
+        headers: {'lang': 'en', 'Authorization': token!});
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);

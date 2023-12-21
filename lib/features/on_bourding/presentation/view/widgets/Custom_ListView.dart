@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 class CustomPageView extends StatelessWidget {
@@ -12,67 +13,88 @@ class CustomPageView extends StatelessWidget {
         children: [
           Column(
             children: [
-              Image.asset(
-                'assets/images/Get your order.png',
-                height: 250,
+              FadeInLeft(
+                animate: true,
+                child: Image.asset(
+                  'assets/images/Get your order.png',
+                  height: 250,
+                ),
               ),
               const SizedBox(
                 height: 40,
               ),
-              const Text(
-                'Get your order !!',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              SlideInLeft(
+                animate: true,
+                child: const Text(
+                  'Get your order !!',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
-                textAlign: TextAlign.center,
+              SlideInRight(
+                animate: true,
+                child: const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),
           Column(
             children: [
-              Image.asset(
-                'assets/images/Track Order.png',
-                height: 250,
+              SlideInRight(
+                child: Image.asset(
+                  'assets/images/Track Order.png',
+                  height: 250,
+                ),
               ),
               const SizedBox(
                 height: 40,
               ),
-              const Text(
-                'Track order !!',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              FadeInDown(
+                child: const Text(
+                  'Track order !!',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
-                textAlign: TextAlign.center,
+              SlideInLeft(
+                child: const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),
           Column(
             children: [
-              Image.asset(
-                'assets/images/Purchase online.png',
-                height: 250,
+              SlideInDown(
+                child: Image.asset(
+                  'assets/images/Purchase online.png',
+                  height: 250,
+                ),
               ),
               const SizedBox(
                 height: 40,
               ),
-              const Text(
-                'Purchase Online !!',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              FadeInLeft(
+                child: const Text(
+                  'Purchase Online !!',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
-                textAlign: TextAlign.center,
+              SlideInLeft(
+                child: const Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing,\nsed do eiusmod tempor ut labore',
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),

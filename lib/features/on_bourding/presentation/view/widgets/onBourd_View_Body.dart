@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:ecommerce/core/Primary_Color.dart';
 import 'package:ecommerce/core/widgets/Custom_Bottoms.dart';
 import 'package:ecommerce/features/Splash/Presentation/Views/Auth_View.dart';
@@ -48,7 +49,8 @@ class _OnBourdViewBodyState extends State<OnBourdViewBody> {
                       : true,
                   child: GestureDetector(
                       onTap: () => conroller!.jumpToPage(3),
-                      child: const Text('Skip')))),
+                      child: SlideInRight(
+                          animate: true, child: const Text('Skip'))))),
           Positioned(
               left: MediaQuery.of(context).size.width * 0.25,
               right: MediaQuery.of(context).size.width * 0.25,

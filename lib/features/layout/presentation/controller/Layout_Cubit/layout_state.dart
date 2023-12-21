@@ -22,3 +22,7 @@ final class IncreamentPrice extends LayoutState {}
 final class DecreamentPrice extends LayoutState {}
 
 final class ChangeReadFlag extends LayoutState {}
+
+final class GetFavouriteSucessState extends LayoutState {}
+
+final class GetFavouriteFailureState extends LayoutState {}

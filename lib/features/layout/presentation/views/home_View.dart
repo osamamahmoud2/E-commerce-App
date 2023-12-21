@@ -14,7 +14,8 @@ class HomeView extends StatelessWidget {
       create: (context) => LayoutCubit()
         ..getGategory()
         ..getBanners()
-        ..getProducts(),
+        ..getProducts()
+        ..getfavourite(),
       child: BlocConsumer<LayoutCubit, LayoutState>(
           builder: ((context, state) {
             final cubit = BlocProvider.of<LayoutCubit>(context);
