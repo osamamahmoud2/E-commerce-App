@@ -66,7 +66,7 @@ class CategoryViewBody extends StatelessWidget {
                                     ),
                                     Text(
                                       cubit.categories[index].name!,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600),
                                     )
@@ -87,7 +87,7 @@ class CategoryViewBody extends StatelessWidget {
                   ],
                 ),
               )
-            : ShimmerUi();
+            : const ShimmerUiCategory();
       },
       listener: (context, state) {},
     ));

@@ -8,7 +8,7 @@ class ApiService {
   postRequest(
       {required String endPoint, required Map<String, dynamic> body}) async {
     http.Response response = await http.post(Uri.parse("$_baseUrl$endPoint"),
-        body: body, headers: {'lang': 'en'});
+        body: body, headers: {'lang': 'en', 'Authorization': token!});
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
 

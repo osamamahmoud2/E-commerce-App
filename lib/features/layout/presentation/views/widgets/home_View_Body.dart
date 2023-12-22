@@ -85,7 +85,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           ),
                           FadeInLeft(
                               animate: true,
-                              duration: const Duration(seconds: 2),
+                              duration: const Duration(seconds: 1),
                               child: const SearchFormAproduct()),
                           const SizedBox(
                             height: 20,
@@ -94,7 +94,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             children: [
                               SlideInRight(
                                 animate: true,
-                                duration: const Duration(seconds: 2),
+                                duration: const Duration(seconds: 1),
                                 child: const Text(
                                   'Categories',
                                   style: TextStyle(
@@ -127,13 +127,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             height: 10,
                           ),
                           FadeInRight(
-                              duration: const Duration(seconds: 2),
+                              duration: const Duration(seconds: 1),
                               child: const GategotyListView()),
                           const SizedBox(
                             height: 15,
                           ),
                           FadeInLeft(
-                              duration: const Duration(seconds: 2),
+                              duration: const Duration(seconds: 1),
                               child: const BannerPageView()),
                           const SizedBox(
                             height: 10,
@@ -152,7 +152,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           ),
                           SlideInUp(
                             animate: true,
-                            duration: const Duration(seconds: 3),
+                            duration: const Duration(seconds: 0),
                             child: GridView.builder(
                               itemCount: cubit.products.length,
                               shrinkWrap: true,
@@ -163,10 +163,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                                       crossAxisSpacing: 20,
                                       mainAxisSpacing: 20),
                               itemBuilder: (context, index) {
-                                return ProductItem(
-                                    index: index,
-                                    name: cubit.products[index].name,
-                                    imageUrl: cubit.products[index].image);
+                                return cubit.products.isNotEmpty
+                                    ? ProductItem(
+                                        cubit: cubit,
+                                        index: index,
+                                        name: cubit.products[index].name,
+                                        imageUrl: cubit.products[index].image)
+                                    : const Icon(Icons.error);
                               },
                             ),
                           )

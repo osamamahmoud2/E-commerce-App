@@ -13,6 +13,10 @@ final class GetCategoryFailureState extends LayoutState {}
 
 final class GetCategoryLoudingState extends LayoutState {}
 
+final class GetProductsSuess extends LayoutState {}
+
+final class GetProductsFailure extends LayoutState {}
+
 final class GetBannerSuccessState extends LayoutState {}
 
 final class GetBannerFailureState extends LayoutState {}
@@ -26,3 +30,7 @@ final class ChangeReadFlag extends LayoutState {}
 final class GetFavouriteSucessState extends LayoutState {}
 
 final class GetFavouriteFailureState extends LayoutState {}
+
+final class ADdOrRemoveFromFavouriteSucessState extends LayoutState {}
+
+final class ADdOrRemoveFromFavouriteFailureState extends LayoutState {}

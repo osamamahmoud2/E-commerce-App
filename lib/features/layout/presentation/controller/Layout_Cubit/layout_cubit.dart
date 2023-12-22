@@ -90,25 +90,45 @@ class LayoutCubit extends Cubit<LayoutState> {
     if (responseData['status'] == true) {
       for (var item in responseData['data']['data']) {
         products.add(ProductModel.fromJson(data: item));
-        emit(GetBannerSuccessState());
+        emit(GetProductsSuess());
       }
     } else {
-      emit(GetBannerFailureState());
+      emit(GetProductsFailure());
     }
   }
 
   List<ProductModel> favourite = [];
-
-  void getfavourite() async {
+  Set<dynamic> productFavouriteList = {};
+  Future getfavourite() async {
+    favourite.clear();
     var responseData = await ApiService().getReuest(endPoint: 'favorites');
     if (responseData['status'] == true) {
-      emit(GetFavouriteSucessState());
       for (var item in responseData['data']['data']) {
         favourite.add(ProductModel.fromJson(data: item['product']));
-        print("items count is ${favourite.length}");
+        productFavouriteList.add(item['product']['id']);
+        print("Favourite Products is $productFavouriteList}");
+        emit(GetFavouriteSucessState());
       }
     } else {
       emit(GetFavouriteFailureState());
+    }
+  }
+
+  void addOrRemoveFromFavourite({required String Product_Id}) async {
+    var responseData = await ApiService().postRequest(
+      endPoint: 'favorites',
+      body: {'product_id': Product_Id},
+    );
+    if (responseData['status'] == true) {
+      if (productFavouriteList.contains(Product_Id) == true) {
+        productFavouriteList.remove(Product_Id);
+      } else {
+        productFavouriteList.add(Product_Id);
+      }
+      await getfavourite();
+      emit(ADdOrRemoveFromFavouriteSucessState());
+    } else {
+      emit(ADdOrRemoveFromFavouriteFailureState());
     }
   }
 }

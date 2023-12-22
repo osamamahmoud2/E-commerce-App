@@ -149,3 +149,85 @@ class ShimmerUi extends StatelessWidget {
     );
   }
 }
+
+class ShimmerUiCategory extends StatelessWidget {
+  const ShimmerUiCategory({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final hight = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(),
+        child: Shimmer.fromColors(
+          baseColor: Colors.white,
+          highlightColor: Colors.grey,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: hight * 0.07,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey,
+                    ),
+                    height: hight * 0.17,
+                    width: double.infinity,
+                  ),
+                ),
+                SizedBox(
+                  height: hight * 0.03,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey,
+                    ),
+                    height: hight * 0.17,
+                    width: double.infinity,
+                  ),
+                ),
+                SizedBox(
+                  height: hight * 0.04,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey,
+                    ),
+                    height: hight * 0.17,
+                    width: double.infinity,
+                  ),
+                ),
+                SizedBox(
+                  height: hight * 0.04,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.grey,
+                    ),
+                    height: hight * 0.17,
+                    width: double.infinity,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

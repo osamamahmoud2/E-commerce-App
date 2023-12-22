@@ -196,10 +196,20 @@ class ProdectDetailsBody extends StatelessWidget {
                             const SizedBox(
                               width: 30,
                             ),
-                            const Icon(
-                              Icons.favorite_rounded,
-                              color: Colors.red,
-                              size: 30,
+                            GestureDetector(
+                              onTap: () {
+                                cubit.addOrRemoveFromFavourite(
+                                    Product_Id:
+                                        cubit.products[index].id.toString());
+                              },
+                              child: Icon(
+                                Icons.favorite_rounded,
+                                color: cubit.productFavouriteList
+                                        .contains(cubit.products[index].id)
+                                    ? Colors.red
+                                    : Colors.blue,
+                                size: 30,
+                              ),
                             )
                           ],
                         ),
