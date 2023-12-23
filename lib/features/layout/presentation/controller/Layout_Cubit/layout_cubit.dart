@@ -85,15 +85,19 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   List<ProductModel> products = [];
   void getProducts() async {
-    var responseData = await ApiService().getReuest(endPoint: 'products');
+    try {
+      var responseData = await ApiService().getReuest(endPoint: 'products');
 
-    if (responseData['status'] == true) {
-      for (var item in responseData['data']['data']) {
-        products.add(ProductModel.fromJson(data: item));
-        emit(GetProductsSuess());
+      if (responseData['status'] == true) {
+        for (var item in responseData['data']['data']) {
+          products.add(ProductModel.fromJson(data: item));
+          emit(GetProductsSuess());
+        }
+      } else {
+        emit(GetProductsFailure());
       }
-    } else {
-      emit(GetProductsFailure());
+    } on Exception catch (e) {
+      print('Bad State');
     }
   }
 

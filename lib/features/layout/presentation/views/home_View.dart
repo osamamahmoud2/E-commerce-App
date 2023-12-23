@@ -35,30 +35,46 @@ class HomeView extends StatelessWidget {
                       BottomNavigationBarItem(
                         label: 'Home',
                         activeIcon: Image.asset(
-                            'assets/images/Property 1=Bold, Property 2=Home.png'),
+                          'assets/images/Property 1=Bold, Property 2=Home.png',
+                          fit: BoxFit.scaleDown,
+                        ),
                         icon: Image.asset(
                           'assets/images/Property 1=Light-Outline, Property 2=Home.png',
+                          fit: BoxFit.scaleDown,
                         ),
                       ),
                       BottomNavigationBarItem(
                         label: 'Category',
                         activeIcon: Image.asset(
-                            'assets/images/Property 1=Bold, Property 2=Bag-2.png'),
+                          'assets/images/Property 1=Bold, Property 2=Bag-2.png',
+                          fit: BoxFit.scaleDown,
+                        ),
                         icon: Image.asset(
                           'assets/images/Iconly (1).png',
+                          fit: BoxFit.scaleDown,
                         ),
                       ),
                       BottomNavigationBarItem(
                         label: 'favourite',
                         activeIcon: Image.asset(
-                            'assets/images/Property 1=Bold, Property 2=Heart.png'),
-                        icon: Image.asset('assets/images/Iconly (2).png'),
+                          'assets/images/Property 1=Bold, Property 2=Heart.png',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        icon: Image.asset(
+                          'assets/images/Iconly (2).png',
+                          fit: BoxFit.scaleDown,
+                        ),
                       ),
                       BottomNavigationBarItem(
                         label: 'Profile',
                         activeIcon: Image.asset(
-                            'assets/images/Property 1=Bold, Property 2=Profile.png'),
-                        icon: Image.asset('assets/images/Iconly (3).png'),
+                          'assets/images/Property 1=Bold, Property 2=Profile.png',
+                          fit: BoxFit.scaleDown,
+                        ),
+                        icon: Image.asset(
+                          'assets/images/Iconly (3).png',
+                          fit: BoxFit.scaleDown,
+                        ),
                       )
                     ]),
               ),

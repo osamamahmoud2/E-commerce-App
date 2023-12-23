@@ -1,5 +1,6 @@
 import 'package:ecommerce/core/Primary_Color.dart';
 import 'package:ecommerce/features/layout/presentation/controller/Layout_Cubit/layout_cubit.dart';
+import 'package:ecommerce/features/layout/presentation/views/Products_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -49,9 +50,19 @@ class FavouriteViewBody extends StatelessWidget {
                                         SizedBox(
                                           width: 150,
                                           height: 150,
-                                          child: Image(
-                                              image: NetworkImage(cubit
-                                                  .favourite[index].image)),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) {
+                                                return ProductDetailsView(
+                                                    index: index);
+                                              }));
+                                            },
+                                            child: Image(
+                                                image: NetworkImage(cubit
+                                                    .favourite[index].image)),
+                                          ),
                                         ),
                                         Column(
                                           children: [

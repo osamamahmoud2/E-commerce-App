@@ -20,17 +20,21 @@ class ApiService {
   }
 
   getReuest({required String endPoint}) async {
-    http.Response response = await http.get(
-        Uri.parse("https://student.valuxapps.com/api/$endPoint"),
-        headers: {'lang': 'en', 'Authorization': token!});
+    try {
+      http.Response response = await http.get(
+          Uri.parse("https://student.valuxapps.com/api/$endPoint"),
+          headers: {'lang': 'en', 'Authorization': token!});
 
-    if (response.statusCode == 200) {
-      var data = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body);
 
-      return data;
-    } else {
-      throw Exception(
-          'There Was an Error in the Service ${response.statusCode}');
+        return data;
+      } else {
+        throw Exception(
+            'There Was an Error in the Service ${response.statusCode}');
+      }
+    } on http.ClientException catch (e) {
+      return 'there Was an error';
     }
   }
 }

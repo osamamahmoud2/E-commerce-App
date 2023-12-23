@@ -75,7 +75,7 @@ class ProductItem extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               cubit.addOrRemoveFromFavourite(
-                  Product_Id: cubit.favourite[index].id.toString());
+                  Product_Id: cubit.products[index].id.toString());
             },
             child: Icon(
               Icons.favorite,
